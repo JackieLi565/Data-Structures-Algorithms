@@ -1,0 +1,48 @@
+In lab 3 I accomplished the following
+Implementing Insertion Sort
+Implementing Merge Sort
+Implementing the metrics methods
+Using the following sort methods we can analyze the complexity of the sorting algorithm. To start, I have 3 text files each container with 3 different sets of numbers: Set1, Set2, and Set3. This will test the best, average, and worst-case scenarios of each sorting method. 
+First insertion sort:
+Worst case:
+Copy operation: n^2 - cn - c = n^2
+Compare operation: n + c = n
+
+Average case:
+Copy operation: n^2 - cn - c = n^2
+Compare operation: n + c = n
+
+Best case:
+Copy operation: cn - c = n
+Compare operation: n + c = n
+
+For the analysis for insertion sort, I first looked at the growth between the worst case and average case copy operations as I did not use the swap operation. We can conclude that for the worst and average case, the insertion has to look through the entire array, and within the loop, we must compare the values. This operation results in an n^2 time complexity. While the best case we only have to look through the array without swapping any values, resulting in just an O(n) time complexity.
+
+From this analysis, I can conclude that insertion sort is best when we have a small amount of data with relatively sorted values. 
+
+For MergeSort:
+Worst case:
+Copy operation: (n)(logn) + cn = nlogn
+Compare operation: n^2 + c = n^2
+
+Average case:
+Copy operation: (n)(logn) + cn = nlogn
+Compare operation: n^2 + c = n^2
+
+Best case:
+Copy operation: (n)(logn) + cn = nlogn
+Compare operation: n^2 + c = n^2
+
+Same analysis as insertion sort where I looked at the growth of the copy operations. We know from documentation that traversing the height of the recursion tree is O(logn) and O(n) being the number of inputs we break down into single arrays. Therefore the entire tree has a complexity of O(nlogn). While with the comparison operation, I found that it is nested within the for loop, thus it has to loop through the numbers are checks for comparisons.
+
+For the merge sort analysis, I can conclude that it has a time complexity of O(nlogn) no matter the data input.
+
+From both sorting analyses Insertion sorting is much faster when we know that the data is relatively sorted and memory management is a concern. While merge sort is relatively predictable as we know the time complexity being nlogn. This predictable result is good for unknown data sets as it nlogn is faster than n^2. The cavitate for merge sort is that it needs more memory for creating arrays, and sorting small datasets is relatively inefficient.
+Therefore when picking the sorting algorithm, you must ask yourself the following questions:
+Do we know the data values we are sorting?
+What is the size of the data?
+Are there memory constraints
+As an example:
+The data we are sorting is unknown in size and we don't know if the data is relatively sorted. If we choose insertion sort and the data we receive back might cause an O(n^2) operation. The better choice would be merge sort as it is safer to take the more predictable option of merge rather than hoping for small and relatively sorted data to get the O(n) from insertion. 
+
+All these questions can affect the decision on the right algorithm to choose.
